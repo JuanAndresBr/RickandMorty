@@ -1,0 +1,8 @@
+.contenido{
+  color:aliceblue;
+  display: flex;
+  justify-content: space-evenly;
+}
+.imagen{
+  height: 220px;
+}
