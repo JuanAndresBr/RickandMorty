@@ -5,7 +5,6 @@ import About from "./components/About.jsx";
 import Detail from "./components/Detail";
 import Forms from "./components/Forms";
 import Favorites from "./components/Favorites"
-import Error from "./components/Error"
 import Portfolio from './components/Portfolio'
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate, Navigate} from "react-router-dom";
@@ -57,13 +56,6 @@ function App() {
   }
 
   function onSearch(character) {
-    // const array = characters.personajes;
-    // array.push({
-    //   name: "Morty Smith",
-    //   species: "Human",
-    //   gender: "Male",
-    //   image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
-    // });
     if (repetido(characters, character)) {
       window.alert("Personaje repetido");
     } else {
@@ -77,6 +69,7 @@ function App() {
           }
         });
     }
+    
   }
 
   return (
@@ -96,8 +89,6 @@ function App() {
         <Route path="/detail/:detailId" element={<Detail />}></Route>
         <Route path="/favorites" element={<Favorites/>}></Route>
         <Route path="/portfolio" element={<Portfolio/>}></Route>
-        <Route path="/error" element={<Error/>}></Route>
-        { <Route path="*" element={<Navigate to="/" replace></Navigate>}></Route>}
       </Routes>
       <hr></hr>
     </div>

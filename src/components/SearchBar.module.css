@@ -1,3 +1,6 @@
+.contenedor{
+  display: flex;
+}
 .search{
   border-radius: 5px;
   padding: 4px;

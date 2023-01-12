@@ -9,18 +9,24 @@ export default function SearchBar(props) {
     setCharacterName({ name: e.target.value });
   };
   return (
-    <div>
+    <div className={styles.contenedor}>
+      <form onSubmit={(e) => {
+        e.preventDefault()
+        props.onSearch(characterName.name)
+        setCharacterName({name: ""})}}>
       <input
         className={styles.search}
         type="search"
         onChange={handleInputChange}
+        value={characterName.name}
       />
       <button
+      type="submit"
         className={styles.button}
-        onClick={() => props.onSearch(characterName.name)}
       >
         Agregar
       </button>
+      </form>
       <button className={styles.button2} onClick={()=>props.onRandom()}>Random</button>
     </div>
   );
