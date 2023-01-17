@@ -1,0 +1,36 @@
+.navBar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 145, 251, .7);
+  padding: 20px;
+  border-radius: 20px;
+  margin: 0;
+
+}
+.Links{
+  display: flex;
+
+}
+.Link{
+  margin-right: 20px;
+  text-decoration: none;
+  color: #FCE62B;
+  font-size: 20px;
+}
+.Link:hover{
+  color: red;
+}
+.LogOut{
+    height: 30px;
+    color: white;
+    background-color: #cb0eff;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    font-weight: bold;
+}
+.LogOut:hover{
+  background-color: red;
+}
