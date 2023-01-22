@@ -4,14 +4,9 @@ import Nav from "./components/Nav.jsx";
 import About from "./components/About.jsx";
 import Detail from "./components/Detail";
 import Forms from "./components/Forms";
-<<<<<<< HEAD:front/src/App.js
 import Favorites from "./components/Favorites";
 import Error from "./components/Error";
 import Portfolio from "./components/Portfolio";
-=======
-import Favorites from "./components/Favorites"
-import Portfolio from './components/Portfolio'
->>>>>>> 621739357ba753c9c452deeb3cdbf55e2b2e044a:src/App.js
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import {
@@ -65,11 +60,7 @@ function App() {
   }
 
   function onSearch(character) {
-<<<<<<< HEAD:front/src/App.js
     if (repetido(character)) {
-=======
-    if (repetido(characters, character)) {
->>>>>>> 621739357ba753c9c452deeb3cdbf55e2b2e044a:src/App.js
       window.alert("Personaje repetido");
     } else {
       axios(`http://localhost:3001/rickandmorty/character/${character}`)
@@ -100,7 +91,6 @@ function App() {
         ></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/detail/:detailId" element={<Detail />}></Route>
-<<<<<<< HEAD:front/src/App.js
         <Route path="/favorites" element={<Favorites />}></Route>
         <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route path="/error" element={<Error />}></Route>
@@ -110,10 +100,6 @@ function App() {
             element={<Navigate to="/" replace></Navigate>}
           ></Route>
         }
-=======
-        <Route path="/favorites" element={<Favorites/>}></Route>
-        <Route path="/portfolio" element={<Portfolio/>}></Route>
->>>>>>> 621739357ba753c9c452deeb3cdbf55e2b2e044a:src/App.js
       </Routes>
       <hr></hr>
     </div>
