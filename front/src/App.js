@@ -8,7 +8,7 @@ import Favorites from "./components/Favorites";
 import Error from "./components/Error";
 import Portfolio from "./components/Portfolio";
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import axios from "axios";
 import {
   Routes,
   Route,
@@ -63,17 +63,20 @@ function App() {
     if (repetido(character)) {
       window.alert("Personaje repetido");
     } else {
-      axios(`http://localhost:3001/rickandmorty/character/${character}`)
-        .then((response) => response.data)
-        .then((data) => {
-          if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-          } else {
-            window.alert("No hay personajes con ese ID");
-          }
-        });
+      try {
+        const result = axios(
+          `http://localhost:3001/rickandmorty/character/${character}`
+        );
+        const data = result.data;
+        if (data.name) {
+          setCharacters((oldChars) => [...oldChars, data]);
+        } else {
+          window.alert("No hay personajes con ese ID");
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
-    
   }
 
   return (
